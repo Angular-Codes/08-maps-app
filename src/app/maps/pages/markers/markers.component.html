@@ -1,1 +1,17 @@
-<p>markers works!</p>
+<ul class="list-group">
+  <li 
+    class="list-group-item list-group-item-info"
+    (click)="addMarker()"
+  >
+    + Add
+  </li>
+
+  <li 
+    class="list-group-item" 
+    (click)="flyTo()"
+  >
+    Marker 1
+  </li>
+
+</ul>
+<div #map class="map-container"></div>
