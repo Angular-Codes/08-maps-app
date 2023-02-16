@@ -1,1 +1,35 @@
-<p>zoom-range works!</p>
+<div #map class="map-container"></div>
+
+<div class="row">
+  <div class="col-12">
+    <label class="form-label" for="">
+      Zoom: {{ zoomLevel | number:'2.0-0' }}
+      - Lng, Lat: [123 , 234]
+    </label>
+    <input 
+      type="range" 
+      class="form-range"
+      [value]="zoomLevel"
+      min="0"
+      max="18"
+      #zoomInput
+      (input)="changeZoom( zoomInput.value )"
+    >
+  </div>
+
+  <div class="col-12">
+    <button 
+      class="btn btn-primary"
+      (click)="zoomOut()"
+    >
+      -
+    </button>
+    <button 
+      class="btn btn-primary float-end"
+      (click)="zoomInt()"
+    >
+      +
+    </button>
+  </div>
+
+</div>
