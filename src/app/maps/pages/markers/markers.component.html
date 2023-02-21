@@ -7,10 +7,13 @@
   </li>
 
   <li 
-    class="list-group-item" 
-    (click)="flyTo()"
+    class="list-group-item"
+    *ngFor="let marker of markers; let i = index"
+    (click)="flyTo(marker.marker)"
+    (dblclick)="deleteMarker( i )"
+    [ngStyle]="{ 'background-color': marker.color}"
   >
-    Marker 1
+    Marker {{ i + 1 }}
   </li>
 
 </ul>
